@@ -8,16 +8,16 @@ def calib_doc(document):
        s1="".join(c for c in char if c.isdigit())
        numbers.append(s1)
     
-    for nums in numbers:
-        if len(nums) > 2:
-            old_number_list = list(nums)
+    for numbers in numbers:
+        if len(numbers) > 2:
+            old_number_list = list(numbers)
             new_number = old_number_list.pop(0) + old_number_list.pop()
             edited_numbers_to_sum.append(new_number)
-        if len(nums) == 1:
-            new_number = nums + nums
+        if len(numbers) == 1:
+            new_number = numbers + numbers
             edited_numbers_to_sum.append(new_number)
-        if len(nums) == 2:
-            edited_numbers_to_sum.append(nums)
+        if len(numbers) == 2:
+            edited_numbers_to_sum.append(numbers)
     
     converted_strings_to_numbers = [eval(i) for i in edited_numbers_to_sum]
     return sum(converted_strings_to_numbers)
